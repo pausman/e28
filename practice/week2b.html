@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <title>Bridge - Lesson 1 Opening Bic</title>
+
+</head>
+
+<body>
+
+    <h3>I am taking a bridge class and this automates the homework from the first week</h3>
+
+
+    <div id="mainc">
+
+        <script>
+            // initialize data
+            var deck = [];
+            var hps = [];
+            deck.push('&spades; A K 9 5 6 <br>&hearts; 9 7 <br>&diams; K Q J 9 8 4 <br>&clubs;<br>');
+            hps.push(13);
+            numCorrect = 0;
+            numWrong = 0;
+
+            // function to check the answer
+            function counthps() {
+
+
+                var enteredHP = document.getElementById('inputedhp').value;
+                var correctHP = hps[index];
+                if (enteredHP == correctHP) {
+                    // got it right
+                    alert("Correct!!");
+                    numCorrect++;
+                }
+                else {
+                    alert('Sorry that is incorrect')
+                    numWrong++;
+                }
+                newScore = document.createElement('p');
+                newScore.textContent = ("Correct Answers: " + numCorrect + " Incorrect Answers: " + numWrong);
+                thediv.appendChild(newScore);
+                var newButton2 = document.createElement('button');
+                newButton2.setAttribute("id", "nbutton2")
+                newButton2.textContent = "Play More";
+                thediv.appendChild(newButton2);
+                const checkit2 = document.getElementById('nbutton2');
+
+                checkit2.addEventListener('click', mycleanup);
+
+            }
+            function mycleanup() {
+
+
+                var e = document.querySelector('div');
+
+                var child = e.lastElementChild;
+                while (child) {
+                    e.removeChild(child);
+                    child = e.lastElementChild;
+                }
+
+
+            }
+
+            var thediv = document.querySelector('div');
+
+            // display the deck
+            var index = 0;
+            var newP2 = document.createElement('p');
+            newP2.innerHTML = "<br> Your hand<br>" + deck[index];
+            thediv.appendChild(newP2);
+            //document.write("<br> Your hand<br>" + deck[index]);
+
+            // display prompts 
+            var newParagraph = document.createElement('p');
+            newParagraph.textContent = "Enter the number of Honor Points:";
+            newParagraph.id = "hplabel"
+            thediv.appendChild(newParagraph);
+            var hp = document.createElement("INPUT");
+            hp.setAttribute("type", "text");
+            hp.setAttribute("id", "inputedhp");
+            thediv.appendChild(hp);
+            var newButton = document.createElement('button');
+            newButton.textContent = "Check Answer";
+            thediv.appendChild(newButton);
+            const checkit = document.querySelector('button');
+            checkit.addEventListener('click', counthps);
+
+
+        </script>
+    </div>
+</body>
+
+</html>
