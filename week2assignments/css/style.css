@@ -1,0 +1,14 @@
+/* Pat Ausman */
+/* style.css Sept 2019 */
+/* styles used in assignment 2 */
+body             { color: Indigo; 
+}
+
+h1, h2           { color: #1c85a8; 
+}
+
+h1, h2, h3       { font-family: 'Georgia', serif; margin: 0; 
+}
+
+h3               { color: DarkSlateGrey;
+}

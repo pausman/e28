@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- Pat Ausman -->
+<!-- index.html Sept 2019 -->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- use bootstrap and responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- external css file -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <title>Bridge - Lesson 1 Opening Bic</title>
+
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div id="instruct" class="container">
+            <h3>I am taking a bridge class and this automates the homework from the first week</h3>
+            <h4>Count the number of 'Honor Points' in each hand</h4>
+            <h5>Honor Points Key: A=4 K=3 Q=2 J=1 and add 1 point for every card over 4 in a suit</h5>
+        </div>
+        <div id="mainc" class="container">
+
+            <script>
+
+                // initialize data - would usually come from a databas
+                var deck = [];
+                var hps = [];
+
+                deck.push('&spades; A 6 4 2<br>&hearts; K j 10 8 <br>&diams; 10 9 8  <br>&clubs; A K<br>');
+                deck.push('&spades; A K 9 5 6 <br>&hearts; 9 7 <br>&diams; K Q J 9 8 4 <br>&clubs;<br>');
+                deck.push('&spades; K J<br>&hearts; Q 7 5 <br>&diams; A 2<br>&clubs; Q 7 5 4 3 2<br>');
+
+                hps.push(16);
+                hps.push(16);
+                hps.push(14);
+
+                // initialize some variables
+                var numCorrect = 0;
+                var numWrong = 0;
+                var index = 0;
+                var thediv = document.getElementById("mainc")
+                var maxdecks = deck.length;
+
+                //start it up
+                mainplay();
+
+
+                function mainplay() {
+
+                    // display the deck
+                    var newP2 = document.createElement('p');
+                    newP2.innerHTML = "<br> Your hand<br>" + deck[index];
+                    thediv.appendChild(newP2);
+
+                    // display prompts 
+                    var newParagraph = document.createElement('p');
+                    newParagraph.textContent = "Enter the number of Honor Points:";
+                    newParagraph.id = "hplabel"
+                    thediv.appendChild(newParagraph);
+                    var hp = document.createElement("INPUT");
+                    hp.setAttribute("type", "text");
+                    hp.setAttribute("id", "inputedhp");
+                    thediv.appendChild(hp);
+                    var newButton = document.createElement('button');
+                    newButton.textContent = "Check Answer";
+                    newButton.setAttribute("id", "checkit");
+                    thediv.appendChild(newButton);
+                    const checkit = document.querySelector('button');
+
+                    // waiting for you to click the buttton 
+                    checkit.addEventListener('click', counthps);
+                }
+                // function to check the answer
+                function counthps() {
+                    var enteredHP = document.getElementById('inputedhp').value;
+                    var correctHP = hps[index];
+                    if (enteredHP == correctHP) {
+                        // got it right
+                        alert("Correct!!");
+                        numCorrect++;
+                    }
+                    else {
+                        alert('Sorry that is incorrect')
+                        numWrong++;
+                    }
+
+                    // put up the score
+                    var newScore = document.createElement('p');
+                    newScore.textContent = ("Correct Answers: " + numCorrect + " Incorrect Answers: " + numWrong);
+                    thediv.appendChild(newScore);
+
+                    // want to play more?
+                    var newButton2 = document.createElement('button');
+                    newButton2.setAttribute("id", "nbutton2")
+                    newButton2.textContent = "Play More";
+                    thediv.appendChild(newButton2);
+                    const checkit2 = document.getElementById('nbutton2');
+
+                    // make the checkit and inputhp text box invisible so they dont enter more data without play more
+                    document.getElementById("checkit").style.visibility = "hidden";
+                    document.getElementById("inputedhp").style.visibility = "hidden";
+
+                    // Listen for the play more button to be clicked
+                    checkit2.addEventListener('click', mycleanup);
+
+                }
+                function mycleanup() {
+
+                    //clean up the screen for next deck
+
+                    var e = document.getElementById("mainc");
+                    var child = e.lastElementChild;
+                    while (child) {
+                        e.removeChild(child);
+                        child = e.lastElementChild;
+                    }
+
+                    // increment to next deck
+                    index++;
+
+                    // if we are out of decks say so otherwise put up a new deck
+                    if (index > maxdecks - 1) {
+                        var newH = document.createElement("h3");
+                        newH.textContent = "Sorry no more hands to evaluate";
+                        thediv.appendChild(newH);
+
+                    } else {
+                        mainplay();
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
