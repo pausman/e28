@@ -1,0 +1,10 @@
+/* Pat Ausman */
+/* style.css Sept 2019 */
+/* styles used in assignment 2 */
+body             { color: Indigo; 
+}
+
+
+[v-cloak] {
+    display: none
+}
