@@ -1,10 +1,22 @@
 /* Pat Ausman */
 /* style.css Sept 2019 */
 /* styles used in assignment 2 */
-body             { color: Indigo; 
+body             { 
+    color: #000; 
+    background: #f7f7f7;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: 500;
+  
 }
 
 
 [v-cloak] {
     display: none
 }
+
+ul {
+    
+    list-style-type: none;
+   }
+
+   
