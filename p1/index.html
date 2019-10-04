@@ -20,26 +20,23 @@
 
     <h1>Prisoner's Dilemma Game</h1>
     <div id='app' v-cloak class="jumbotron">
-        <div v-if='true'>A</div>
 
-        <div v-if='false'>B</div>
-
-        <div v-show='true'>C</div>
-
-        <div v-show='false'>D</div>
         <div class="container">
-            The prisoner's dilemma is a standard example of a game analyzed in game theory that shows why two completely
-            rational individuals might not cooperate, even if it appears that it is in their best interests to do so. It
-            was originally framed by Merrill Flood and Melvin Dresher while working at RAND in 1950.
-            <div>
-                <button id='playBtn' v-on:click='flip'>I want to Play!</button>
-                <button id='noplayBtn'>No Thanks!</button>
-
+            <div v-if="showIntro">
+                The prisoner's dilemma is a standard example of a game analyzed in game theory that shows why two
+                completely
+                rational individuals might not cooperate, even if it appears that it is in their best interests to do
+                so. It
+                was originally framed by Merrill Flood and Melvin Dresher while working at RAND in 1950.
+                <button id='playBtn' @click='playGame'>I want to Play!</button>
+                <button id='noplayBtn' @click='endGame'>No Thanks!</button>
             </div>
             <br>
-            <div class="container border border-primary">
+            <div v-if="sayGoodbye">Thank you for coming!</div>
+
+            <div class="container border border-primary" v-if="showGame">
                 <ul>
-                    <li>You and Jane are robbers that are arrested while waiting across the street of a bank that you
+                    <li>You and Jane are robbers that are arrested while waiting across the street from a bank that you
                         planned
                         to rob that night.</li>
                     <li>You are separated from Jane and have no means of communicating with her.</li>
@@ -62,12 +59,20 @@
                     <p>
                         What do you want to do?
                     </p>
+
                     <div>
-                        <label><input type='radio' value='betray' v-model='choice'> Betray Jane</label><br>
-                        <label><input type='radio' value='savemySelf' v-model='choice'> Stay quiet</label>
+                        <label><input type='radio' name='userChoice' value='Betray' v-model='userChoice' /> Betray
+                            Jane</label><br>
+                        <label><input type='radio' name='userChoice' value='Silent' v-model='userChoice' /> Stay
+                            quiet</label>
                     </div>
-                    <button id='choiseBtn' v-on:click='choise' class="btn btn-primary btn-lg">Choose!</button>
+                    <button id='choiceBtn' @click='runSim' class="btn btn-primary btn-lg">Choose!</button>
+
+
                 </ul>
+            </div>
+            <div class="container border border-primary" v-if="showVerdict">
+                {{verdict}}
             </div>
         </div>
     </div>
