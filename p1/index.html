@@ -17,9 +17,9 @@
 </head>
 
 <body>
-
-    <h1>Prisoner's Dilemma Game</h1>
     <div id='app' v-cloak class="jumbotron">
+        <h1 class="display-4">Prisoner's Dilemma Game</h1>
+
 
         <div class="container">
             <div v-if="showIntro">
@@ -66,16 +66,19 @@
                         <label><input type='radio' name='userChoice' value='Silent' v-model='userChoice' /> Stay
                             quiet</label>
                     </div>
-                    <button id='choiceBtn' @click='runSim' class="btn btn-primary btn-lg">Choose!</button>
+                    <button id='choiceBtn' @click='runSim' class="btn btn-primary">Choose!</button>
 
 
                 </ul>
             </div>
-            <div class="container border border-primary" v-if="showVerdict">
+            <div class="container" v-if="showVerdict">
+                You selected to {{userChoice}} and Jane selected to {{computerChoice}} therefore
                 {{verdict}}
+                <p>
+                    <button @click='loadGame'>Play again please</button>
+                </p>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

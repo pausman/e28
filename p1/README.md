@@ -1,6 +1,6 @@
 # Project 1
 + By: Pat Ausman
-+ Production URL: <http://p1.yourdomain.com>
++ Production URL: http://p1.pmadwa2018.me/
 
 ## Outside resources
 https://en.wikipedia.org/wiki/Prisoner%27s_dilemma - definition of the game
