@@ -1,10 +1,49 @@
 <!doctype html>
 <html lang='en'>
+
 <head>
 	<title>Practice Application</title>
-	<meta charset='utf-8'>
+	<meta charset='utf-8'> <!-- external jsfile -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+	<script src="script.js" defer></script>
+
+	<style>
+		div {
+			padding: 10px 0;
+		}
+
+		#winMessage {
+			color: green;
+		}
+
+		#loseMessage {
+			color: red;
+		}
+
+		[v-cloak] {
+			display: none
+		}
+
+		.b {
+			color: red;
+		}
+
+		.c {
+			font-size: large;
+		}
+
+		.d {
+			background-color: blueviolet;
+		}
+	</style>
 </head>
+
 <body>
-	<h1>Practice Application</h1>
+	<div id=app>
+		<h1>Practice Application</h1>
+		<div class='a' v-bind:class="['b', 'c', { d : false }]">no</div>
+		<div v-bind:class="{ true: false }">text</div>
+	</div>
 </body>
+
 </html>
