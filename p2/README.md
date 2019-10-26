@@ -2,8 +2,8 @@
 + By: Pat Ausman
 + Production URL: http://p2.pmadwa2018.me/
 + Changes from p1:
-* Took the intro text and made it into a component
-* Added a Results Summary section at the end that uses a repeatable ShowResults component. 
+1. Took the intro text and made it into a component
+2. Added a Results Summary section at the end that uses a repeatable ShowResults component. 
 
 ## Outside resources
 https://en.wikipedia.org/wiki/Prisoner%27s_dilemma - definition of the game.
