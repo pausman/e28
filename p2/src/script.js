@@ -33,22 +33,32 @@ let app = new Vue({
         round: 1
     },
     methods: {
-        playGame: function () {
+        playGame: function (anumber) {
             // start up the game 
-            this.showIntro = false;
-            this.showGame = true;
-            this.showVerdict = false;
-            this.computerChoice = '';
-            this.janeImage = '';
-            this.userImage = '';
+
+            if (anumber == 0) {
+
+                this.sayGoodbye = false;
+                this.showIntro = false;
+                this.showGame = true;
+                this.showVerdict = false;
+                this.computerChoice = '';
+                this.janeImage = '';
+                this.userImage = '';
+            }
+            else {
+
+                this.sayGoodbye = true;
+                this.showIntro = false;
+            }
 
         },
 
-        endGame: function () {
-            // end the game with a goodbye message
-            this.sayGoodbye = true;
-            this.showIntro = false;
-        },
+        //     endGame: function () {
+        //       // end the game with a goodbye message
+        //     this.sayGoodbye = true;
+
+        // },
 
         runSim: function () {
             // figure out the verdicts based on input

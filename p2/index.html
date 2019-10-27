@@ -23,7 +23,8 @@
         <div class="container bg-secondary text-white">
 
             <!-- Intro screen -->
-            <intro-screen v-if="showIntro" @play-game='playGame()'></intro-screen>
+
+            <intro-screen v-if="showIntro" @play-game='playGame($event)'></intro-screen>
             <br>
             <div v-if="sayGoodbye">Thank you for coming!</div>
 

@@ -7,8 +7,8 @@
     was originally framed by Merrill Flood and Melvin Dresher while working at RAND in 1950.
     <br />
     <br />
-    <button id="playBtn" @click="$emit('play-game')" class="btn btn-info">I want to Play!</button>
-    <button id="noplayBtn" @click="$emit('play-game')" class="btn btn-info">No Thanks!</button>
+    <button @click="$emit('play-game',0)" class="btn btn-info">I want to Play!</button>
+    <button @click="$emit('play-game',1)" class="btn btn-info">No Thanks!</button>
   </div>
 </template>
 <script>
@@ -20,6 +20,10 @@ export default {
     showIntro: {
       type: Boolean,
       default: true
+    },
+    sayGoodbye: {
+      type: Boolean,
+      default: false
     }
   },
   template: "#intro-screen"
