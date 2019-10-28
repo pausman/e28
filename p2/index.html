@@ -93,8 +93,8 @@
                 </div>
                 <br>
                 <br>
-                <button @click='playGame' class="btn btn-info">Play again please</button>
-                <div v-for='round in rounds'>
+                <button @click='playGame(0)' class="btn btn-info">Play again please</button>
+                <div v-for='round in rounds' :key='round.number'>
                     <div v-if="round.number==1">
                         <h4>Results Summary:</h4>
 
