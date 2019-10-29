@@ -33,4 +33,13 @@ export default {
   template: "#show-result"
 };
 </script>
-<style></style>
+<style scoped>
+ul {
+  list-style-type: square;
+  background: blue;
+  padding: 20px;
+}
+li {
+  background: blueviolet;
+}
+</style>

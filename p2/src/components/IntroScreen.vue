@@ -29,4 +29,9 @@ export default {
   template: "#intro-screen"
 };
 </script>
-<style></style>
+
+<style>
+button {
+  border-radius: 50%;
+}
+</style>

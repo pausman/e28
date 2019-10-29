@@ -221,4 +221,26 @@ export default {
 </script>
 
 <style>
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+/* from w3schools.com */
+.column {
+  flex: 50%;
+  padding: 5px;
+}
+
+.row {
+  display: flex;
+}
+
+/* new html5 figure and figcaption */
+figure {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  color: blue;
+  border: thin silver solid;
+}
+[v-cloak] {
+  display: none;
+}
 </style>

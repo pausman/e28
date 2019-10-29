@@ -29,4 +29,5 @@ export default {
   template: "#intro-screen"
 };
 </script>
-<style></style>
+<style>
+</style>
