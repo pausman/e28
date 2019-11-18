@@ -31,7 +31,4 @@ export default {
 </script>
 
 <style>
-button {
-  border-radius: 50%;
-}
 </style>
