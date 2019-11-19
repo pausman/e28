@@ -23,11 +23,11 @@ export default {
   components: {},
   data: function() {
     return {
-      //
-      //links: ['Home', 'Dogs', 'Vote'],
-      links: [{prompt:'Home', pge:'Home'},
-      {prompt:'Available Dogs', pge:'Dogs'}, 
-      {prompt:"Vote for next week's featured dog", pge:'Vote'}],
+      links: [
+        { prompt: 'Home', pge: 'Home' },
+        { prompt: 'Available Dogs', pge: 'Dogs' },
+        { prompt: "Vote for next week's featured dog", pge: 'Vote' }
+      ],
       sharedState: app.store
     };
   }
@@ -35,8 +35,6 @@ export default {
 </script>
 
 <style>
-
 @import './assets/css/p3.css';
-
 </style>
 

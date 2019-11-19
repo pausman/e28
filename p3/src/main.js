@@ -16,7 +16,7 @@ const routes = [
   { path: '/dogs', component: ShowDogsPage, name: 'Dogs' },
   { path: '/dog/:id', component: DogPage, name: 'dog', props: true },
   { path: '/dogsvote', component: VotePage, name: 'Vote' },
-  { path: '/showvote/:id', component: ShowVote, name: 'ShowVote' },
+  { path: '/showvote/:id', component: ShowVote, name: 'ShowVote', props: true },
 
 ]
 

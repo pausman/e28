@@ -20,7 +20,9 @@ export default {
       dog: null
     };
   },
+
   props: ['id'],
+
   mounted() {
     app.axios.get(app.config.api + '/dogs/' + this.id).then(response => {
       this.dog = response.data;
@@ -29,5 +31,5 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 </style>

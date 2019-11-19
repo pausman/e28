@@ -3,8 +3,7 @@
     <div>
       <a>
         <router-link :to='{ name: "dog", params: {"id" : dog.id }}'>
-          <div >{{ dog.name }}</div>
-
+          <div>{{ dog.name }}</div>
           <img class='dog' alt='"Image of  " + dog.name' :src='dog.url' />
         </router-link>
       </a>
