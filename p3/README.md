@@ -21,7 +21,7 @@ Pages and components implemented:
 + Vote Dog stores the vote information to local storage.
 
 Data:
-+Used a json-server for data storage.
++ Used a json-server for data storage at pausman/e28-dogs-api
 
 ## Notes for instructor
 none
