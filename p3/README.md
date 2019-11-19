@@ -7,9 +7,9 @@
 ## Outside resources
 data and images from thedogapi.com except for logo which is personal.
 
-## Notes for instructor
-none
 
+
+## Outline of features
 
 Pages and components implemented:
 + Home Page with a 'featured' dog of the week
@@ -19,3 +19,9 @@ Pages and components implemented:
 + Dog Page shows the details of a a selected dog (available from anywhere where a picture and name of a dog occurs)
 + Show Dog shows the name and image of a dog.
 + Vote Dog stores the vote information to local storage.
+
+Data:
++Used a json-server for data storage.
+
+## Notes for instructor
+none
