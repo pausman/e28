@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div v-if='!currentVote.length'>
-      No vote recorded.
-      Please vote from menu above
-    </div>
-    <div v-else>You voted for:</div>
+    <div>You voted for:</div>
     <show-dog v-for='dog in currentVote' :key='dog.id' :dog='dog'></show-dog>
   </div>
 </template>
