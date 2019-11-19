@@ -5,7 +5,7 @@
 
 
 ## Outside resources
-data and images from thedogapi.com except for logo which is personal.
++ Data and images from thedogapi.com except for logo which is personal.
 
 
 
