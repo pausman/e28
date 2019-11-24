@@ -8,7 +8,7 @@
 <script>
 import ShowDog from './../ShowDog.vue';
 
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 
 export default {
   name: 'DogsPage',
@@ -16,16 +16,16 @@ export default {
   components: { ShowDog },
 
   data: function() {
-    return {
-      dogs: null
-    };
+    return {};
   },
 
-  mounted() {
-    app.axios.get(app.config.api + 'dogs').then(response => {
-      this.dogs = response.data;
-    });
-  }
+  computed: {
+    dogs: function() {
+      return this.$store.state.dogs;
+    }
+  },
+
+  mounted() {}
 };
 </script>
 

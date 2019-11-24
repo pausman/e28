@@ -1,11 +1,11 @@
 <template>
   <div>
-    <show-dog v-for='dog in afeaturedDog' :key='dog.id' :dog='dog'></show-dog>
+    <show-dog v-for='dog in featuredDog' :key='dog.id' :dog='dog'></show-dog>
   </div>
 </template>
 
 <script>
-import * as app from './../app.js';
+//import * as app from './../app.js';
 import ShowDog from './ShowDog.vue';
 
 export default {
@@ -13,26 +13,18 @@ export default {
 
   components: { ShowDog },
 
-  methods: {
+  data: function() {
+    return {};
+  },
+  computed: {
+    dogs: function() {
+      return this.$store.state.dogs;
+    },
     featuredDog: function() {
-      this.afeaturedDog = this.dogs.filter(dog => {
-
+      return this.dogs.filter(dog => {
         return dog.id === 3;
       });
     }
-  },
-  data: function() {
-    return {
-      dogs: null,
-      afeaturedDog: [],
-      chosenNumber: 0
-    };
-  },
-  mounted() {
-    app.axios.get(app.config.api + 'dogs').then(response => {
-      this.dogs = response.data;
-      this.featuredDog();
-    });
   }
 };
 </script>

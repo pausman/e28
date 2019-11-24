@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 
 import ShowFeatured from './../ShowFeatured.vue';
 
@@ -18,12 +18,13 @@ export default {
       featuredDogId: 1
     };
   },
+  computed: {
+    dogs: function() {
+      return this.$store.state.dogs;
+    }
+  },
 
-  mounted() {
-    app.axios.get(app.config.api + 'dogs').then(response => {
-      this.dogs = response.data;
-    });
-  }
+  mounted() {}
 };
 </script>
 

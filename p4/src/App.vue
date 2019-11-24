@@ -16,8 +16,6 @@
 </template>
 
 <script>
-import * as app from './app.js';
-
 export default {
   name: 'app',
   components: {},
@@ -27,9 +25,11 @@ export default {
         { prompt: 'Home', pge: 'Home' },
         { prompt: 'Available Dogs', pge: 'Dogs' },
         { prompt: "Vote for next week's featured dog", pge: 'Vote' }
-      ],
-      sharedState: app.store
+      ]
     };
+  },
+  mounted() {
+    this.$store.dispatch('setDogs');
   }
 };
 </script>

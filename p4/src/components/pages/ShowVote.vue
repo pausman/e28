@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 import ShowDog from './../ShowDog.vue';
 
 export default {
@@ -14,24 +14,23 @@ export default {
   components: { ShowDog },
   data: function() {
     return {
-      currentVote: null
+      //currentVote: null
     };
   },
-  methods: {
-    getVote: function() {
+  methods: {},
+  computed: {
+    dogs: function() {
+      return this.$store.state.dogs;
+    },
+    currentVote: function() {
       // if there is a vote show it
-      this.currentVote = this.dogs.filter(dog => {
+      return this.dogs.filter(dog => {
         return dog.id === parseInt(localStorage.getItem('dogId'));
       });
     }
   },
 
-  mounted() {
-    app.axios.get(app.config.api + 'dogs').then(response => {
-      this.dogs = response.data;
-      this.getVote();
-    });
-  }
+  mounted() {}
 };
 </script>
 

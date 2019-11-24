@@ -10,23 +10,29 @@
 </template>
 
 <script>
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 
 export default {
   name: 'DogPage',
 
   data: function() {
     return {
-      dog: null
+      //  dog: null
     };
   },
 
   props: ['id'],
 
+  computed: {
+    dog: function() {
+      return this.$store.getters.getDogById(this.id);
+    }
+  },
+
   mounted() {
-    app.axios.get(app.config.api + '/dogs/' + this.id).then(response => {
-      this.dog = response.data;
-    });
+    //app.axios.get(app.config.api + '/dogs/' + this.id).then(response => {
+    //this.dog = response.data;
+    //});
   }
 };
 </script>

@@ -12,16 +12,13 @@
 <script>
 import VoteDog from './../VoteDog.vue';
 
-import * as app from './../../app.js';
+//import * as app from './../../app.js';
 
 export default {
   name: 'VotePage',
   components: { VoteDog },
   data: function() {
-    return {
-      dogs: null,
-      currentVote: null
-    };
+    return {};
   },
   methods: {
     getVote: function() {
@@ -29,12 +26,16 @@ export default {
       this.currentVote = localStorage.getItem('dogName');
     }
   },
-  mounted() {
-    app.axios.get(app.config.api + 'dogs').then(response => {
-      this.dogs = response.data;
-      this.getVote();
-    });
-  }
+  computed: {
+    dogs: function() {
+      return this.$store.state.dogs;
+    },
+    currentVote: function() {
+      return localStorage.getItem('dogName');
+    }
+  },
+
+  mounted() {}
 };
 </script>
 

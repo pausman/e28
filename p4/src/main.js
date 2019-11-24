@@ -7,6 +7,7 @@ import ShowDogsPage from './components/pages/ShowDogsPage.vue'
 import DogPage from './components/pages/DogPage.vue';
 import VotePage from './components/pages/VotePage.vue';
 import ShowVote from './components/pages/ShowVote.vue';
+import store from './store';
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false
@@ -26,6 +27,7 @@ const router = new VueRouter({
 });
 
 new Vue({
+  store: store,
   router: router,
   render: h => h(App),
 }).$mount('#app')

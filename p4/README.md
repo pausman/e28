@@ -10,8 +10,10 @@
 
 
 ## Outline of features
+P4 additions
++ Created store for dogs api data
 
-Pages and components implemented:
+P3 pages and components implemented:
 + Home Page with a 'featured' dog of the week
 + Dogs Page with a list of available dogs for adoption
 + Vote Page with a list of dogs to vote on for next week's featured dog
