@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Available Dogs</h2>
-    <show-dog v-for='dog in dogs' :key='dog.id' :dog='dog'></show-dog>
+    <show-dog data-test='show-dog-test' v-for='dog in dogs' :key='dog.id' :dog='dog'></show-dog>
   </div>
 </template>
 

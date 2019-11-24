@@ -12,6 +12,7 @@
 ## Outline of features
 P4 additions
 + Created store for dogs api data
++ Add Unit text for ShowDogsPage.vue component
 
 P3 pages and components implemented:
 + Home Page with a 'featured' dog of the week
