@@ -1,5 +1,5 @@
 <template>
-  <div v-if='dog'>
+  <div data-test='dog-name3' v-if='dog'>
     <h1>Dog: {{dog.name}}</h1>
     <p v-if='dog.bred_for'>Bred for: {{dog.bred_for}}</p>
     <p v-if='dog.breed_group'>Group: {{dog.breed_group}}</p>

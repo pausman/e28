@@ -5,7 +5,7 @@ import { ShowDogsPage } from '@/components/pages/ShowDogsPage.vue'
 
 describe('ShowDogsPage.vue', () => {
   it('shows a vote', () => {
-    // Define a product we can test
+    // Define a dog we can test
     let dogs = [
       {
         "weight": "44 - 66",

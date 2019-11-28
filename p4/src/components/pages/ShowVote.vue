@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>You voted for:</div>
-    <show-dog v-for='dog in currentVote' :key='dog.id' :dog='dog'></show-dog>
+    <show-dog data-test='show-vote' v-for='dog in currentVote' :key='dog.id' :dog='dog'></show-dog>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
   <div>
     <div>
       <a>
-        <router-link :to='{ name: "dog", params: {"id" : dog.id }}'>
+        <router-link data-test='dog-name2' :to='{ name: "dog", params: {"id" : dog.id }}'>
           <div>{{ dog.name }}</div>
           <img class='dog' alt='"Image of  " + dog.name' :src='dog.url' />
         </router-link>

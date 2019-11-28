@@ -2,9 +2,12 @@
   <div>
     <div>
       <a>
-        <div>
+        <div data-test='dog-vote-test'>
           {{ dog.name }}
-          <button @click='voteForDog(dog.id,dog.name)'>Vote for me</button>
+          <button
+            data-test='dog-vote-button'
+            @click='voteForDog(dog.id,dog.name)'
+          >Vote for me</button>
         </div>
       </a>
     </div>

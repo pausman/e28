@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import { products } from './../products.js';
-
 export default {
     name: 'ShowFeatured',
     props: ['category'],
@@ -19,12 +17,13 @@ export default {
                 return product.categories.includes(this);
             }
             return this.products.filter(isMatch, this.category);
+        },
+        products: function() {
+            return this.$store.state.products;
         }
     },
     data: function() {
-        return {
-            products: products
-        };
+        return {};
     }
 };
 </script>
