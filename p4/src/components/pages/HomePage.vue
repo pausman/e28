@@ -6,8 +6,6 @@
 </template>
 
 <script>
-//import * as app from './../../app.js';
-
 import ShowFeatured from './../ShowFeatured.vue';
 
 export default {

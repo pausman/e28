@@ -7,6 +7,7 @@ import ShowDogsPage from './components/pages/ShowDogsPage.vue'
 import DogPage from './components/pages/DogPage.vue';
 import VotePage from './components/pages/VotePage.vue';
 import ShowVote from './components/pages/ShowVote.vue';
+import FindPage from './components/pages/FindDogPage.vue';
 import store from './store';
 
 Vue.use(VueRouter);
@@ -18,6 +19,7 @@ const routes = [
   { path: '/dog/:id', component: DogPage, name: 'dog', props: true },
   { path: '/dogsvote', component: VotePage, name: 'Vote' },
   { path: '/showvote/:id', component: ShowVote, name: 'ShowVote', props: true },
+  { path: '/finddog', component: FindPage, name: 'Find' },
 
 ]
 

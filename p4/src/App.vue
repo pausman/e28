@@ -24,7 +24,8 @@ export default {
       links: [
         { prompt: 'Home', pge: 'Home' },
         { prompt: 'Available Dogs', pge: 'Dogs' },
-        { prompt: "Vote for next week's featured dog", pge: 'Vote' }
+        { prompt: "Vote for next week's featured dog", pge: 'Vote' },
+        { prompt: 'Find a Friend', pge: 'Find' },
       ]
     };
   },

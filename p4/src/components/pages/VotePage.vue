@@ -1,10 +1,9 @@
 <template>
   <div>
     <h2>Vote for Next Week's Featured Dog</h2>
-    <div data-test="current-vote-test" id='highlight' v-if='currentVote'>
-        Your current vote is for: {{currentVote}}
+    <div data-test='current-vote-test' id='highlight' v-if='currentVote'>
+      Your current vote is for: {{currentVote}}
       <br />
-      
     </div>
     <vote-dog data-test='dog-vote-test2' v-for='dog in dogs' :key='dog.id' :dog='dog'></vote-dog>
   </div>
@@ -12,8 +11,6 @@
 
 <script>
 import VoteDog from './../VoteDog.vue';
-
-//import * as app from './../../app.js';
 
 export default {
   name: 'VotePage',
