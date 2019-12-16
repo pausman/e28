@@ -7,7 +7,6 @@
       <input
         type='text'
         name='name'
-        required
         :class='{ "form-input": $v.name.$error }'
         data-test='vol-name-input'
         v-model='$v.name.$model'
