@@ -1,18 +1,19 @@
 // https://docs.cypress.io/api/introduction/api.html
 
 describe('Dogs test', () => {
+  // some data
   let dogs =
   {
-
     "id": 1,
     "name": "American Foxhound",
-
   }
   let dogs2 =
   {
     "id": 1,
     "name": "African Hunting Dog"
   }
+
+  //Check the home page. Should contain some text and 1 dog
   it('Visits the app root url', () => {
     cy.visit('/')
     cy.contains('h2', 'Featured Dog of the Week')
@@ -22,6 +23,8 @@ describe('Dogs test', () => {
     cy.get('[data-test="dog-name2"]').should('have.length', 1)
 
   }),
+
+    //Check the page thqt has all the dogs pict. Clicking on a pict/link should bring up details of that dog
     it('Visits the dog page', () => {
       cy.visit('/dogs')
       cy.contains('h2', 'Available Dogs')
@@ -32,6 +35,7 @@ describe('Dogs test', () => {
       cy.contains('[data-test="dog-name3"]', dogs.name)
     }),
 
+    //Check the page that lets you vote for yourfavorite dog.Store the resultw
     it('Visit the vote page', () => {
       cy.visit('/dogsvote')
       //are the number of dogs correct
@@ -43,5 +47,39 @@ describe('Dogs test', () => {
       cy.visit('/dogsvote')
       cy.contains('[data-test="current-vote-test"]', dogs2.name)
     })
+
+  // Check the form to volunteer
+  it('Visit the volunteer page', () => {
+    // fill in eachl member of the form 
+    cy.visit('/volunteer')
+    cy.get('[data-test=vol-name-input]').type("Pat Ausman");
+    cy.get('[data-test=vol-email-input]').type("abc@gmail.com");
+    cy.get('[data-test=vol-phone-input]').type("987-876-7654");
+    cy.get('[data-test=vol-day-checkbox1]').check();
+    cy.get('[data-test=vol-day-checkbox2]').check();
+    cy.get('[data-test=vol-day-checkbox3]').check();
+    cy.get('[data-test=vol-day-checkbox4]').check();
+    cy.get('[data-test=vol-day-checkbox5]').check();
+    // submit the form
+    cy.get('[data-test=add-vol-button]').click();
+    // the showvolunteer pages shows with the info entered.
+    cy.contains('[data-test="vol-name"]', "Pat Ausman");
+    cy.contains('[data-test="vol-email"]', "abc@gmail.com");
+    cy.contains('[data-test="vol-phone"]', "987-876-7654");
+    cy.contains('[data-test="vol-days"]', "Friday");
+    cy.contains('[data-test="vol-days"]', "Thursday");
+    cy.contains('[data-test="vol-days"]', "Wednesday");
+    cy.contains('[data-test="vol-days"]', "Tuesday");
+    cy.contains('[data-test="vol-days"]', "Monday");
+
+
+
+
+
+
+
+
+
+  })
 
 })

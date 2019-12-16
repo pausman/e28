@@ -7,8 +7,12 @@ import ShowDogsPage from './components/pages/ShowDogsPage.vue'
 import DogPage from './components/pages/DogPage.vue';
 import VotePage from './components/pages/VotePage.vue';
 import ShowVote from './components/pages/ShowVote.vue';
-import FindPage from './components/pages/FindDogPage.vue';
+import VolunteerPage from './components/pages/VolunteerPage.vue';
+import ShowVolunteer from './components/ShowVolunteer.vue';
 import store from './store';
+import Vuelidate from 'vuelidate';
+Vue.use(Vuelidate);
+
 
 Vue.use(VueRouter);
 Vue.config.productionTip = false
@@ -19,7 +23,8 @@ const routes = [
   { path: '/dog/:id', component: DogPage, name: 'dog', props: true },
   { path: '/dogsvote', component: VotePage, name: 'Vote' },
   { path: '/showvote/:id', component: ShowVote, name: 'ShowVote', props: true },
-  { path: '/finddog', component: FindPage, name: 'Find' },
+  { path: '/volunteer', component: VolunteerPage, name: 'Volunteer' },
+  { path: '/showvolunteer', component: ShowVolunteer, name: 'ShowVolunteer', props: true }
 
 ]
 
@@ -31,5 +36,5 @@ const router = new VueRouter({
 new Vue({
   store: store,
   router: router,
-  render: h => h(App),
+  render: h => h(App)
 }).$mount('#app')

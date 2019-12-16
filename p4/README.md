@@ -6,6 +6,7 @@
 
 ## Outside resources
 + Data and images from thedogapi.com except for logo which is personal.
+https://github.com/phoenixwong/vue2-timepicker
 
 
 

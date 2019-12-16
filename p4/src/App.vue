@@ -25,7 +25,7 @@ export default {
         { prompt: 'Home', pge: 'Home' },
         { prompt: 'Available Dogs', pge: 'Dogs' },
         { prompt: "Vote for next week's featured dog", pge: 'Vote' },
-        { prompt: 'Find a Friend', pge: 'Find' },
+        { prompt: 'How to Help', pge: 'Volunteer' }
       ]
     };
   },
@@ -38,4 +38,3 @@ export default {
 <style>
 @import './assets/css/p3.css';
 </style>
-
