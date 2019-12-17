@@ -1,16 +1,15 @@
 <template>
   <div>
-    <div>
-      <a>
-        <div data-test='dog-vote-test'>
-          {{ dog.name }}
-          <button
-            data-test='dog-vote-button'
-            @click='voteForDog(dog.id,dog.name)'
-          >Vote for me</button>
-        </div>
-      </a>
-    </div>
+    <!-- component to show the dogs name and a button to vote for -->
+    <a>
+      <div data-test='dog-vote-test'>
+        {{ dog.name }}
+        <button
+          data-test='dog-vote-button'
+          @click='voteForDog(dog.id,dog.name)'
+        >Vote for me</button>
+      </div>
+    </a>
   </div>
 </template>
 

@@ -72,6 +72,26 @@ describe('Dogs test', () => {
     cy.contains('[data-test="vol-days"]', "Tuesday");
     cy.contains('[data-test="vol-days"]', "Monday");
 
+    //validation texts
+    cy.visit('/volunteer');
+    cy.get('[data-test=vol-name-input]').type("Pa");
+    cy.contains('[data-test="vol-name-err"]', "Your name must be at least 5 characters long");
+    cy.get('[data-test=vol-name-input]').type("{backspace}{backspace}");
+    cy.contains('[data-test="vol-name-err2"]', "Your name is required please.");
+    cy.get('[data-test=vol-email-input]').type("Pa");
+    cy.contains('[data-test="vol-email-err2"]', "Please enter a valid email address.");
+    cy.get('[data-test=vol-email-input]').type("{backspace}{backspace}");
+    cy.contains('[data-test="vol-email-err"]', "Email address is required please.");
+    cy.get('[data-test=vol-phone-input]').type("Pa");
+    cy.contains('[data-test="vol-phone-err2"]', "Please enter a valid phone number");
+    cy.get('[data-test=vol-phone-input]').type("{backspace}{backspace}");
+    cy.contains('[data-test="vol-phone-err"]', "A phone number is required please.");
+    cy.get('[data-test=vol-day-checkbox1]').check();
+    cy.get('[data-test=vol-day-checkbox1]').uncheck();
+    cy.contains('[data-test="vol-monam-err"]', "Please select at least one day to volunteer.");
+    cy.contains('[data-test="vol-form-err"]', "Please correct the above errors");
+
+
 
 
 

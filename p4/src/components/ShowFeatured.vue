@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Show the featured dog  -->
     <show-dog v-for='dog in featuredDog' :key='dog.id' :dog='dog'></show-dog>
   </div>
 </template>

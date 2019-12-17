@@ -1,5 +1,6 @@
 <template>
   <div data-test='dog-name3' v-if='dog'>
+    <!-- Show detail data about a dog -->
     <h1>Dog: {{dog.name}}</h1>
     <p v-if='dog.bred_for'>Bred for: {{dog.bred_for}}</p>
     <p v-if='dog.breed_group'>Group: {{dog.breed_group}}</p>
@@ -16,9 +17,7 @@ export default {
   name: 'DogPage',
 
   data: function() {
-    return {
-      //  dog: null
-    };
+    return {};
   },
 
   props: ['id'],
@@ -27,12 +26,6 @@ export default {
     dog: function() {
       return this.$store.getters.getDogById(this.id);
     }
-  },
-
-  mounted() {
-    //app.axios.get(app.config.api + '/dogs/' + this.id).then(response => {
-    //this.dog = response.data;
-    //});
   }
 };
 </script>

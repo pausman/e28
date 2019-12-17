@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Page to allow you to click a button to vote for a dog-->
     <h2>Vote for Next Week's Featured Dog</h2>
     <div data-test='current-vote-test' id='highlight' v-if='currentVote'>
       Your current vote is for: {{currentVote}}
@@ -31,9 +32,7 @@ export default {
     currentVote: function() {
       return localStorage.getItem('dogName');
     }
-  },
-
-  mounted() {}
+  }
 };
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- Home Page showing Featured dog -->
     <h2>Featured Dog of the Week</h2>
     <show-featured></show-featured>
   </div>
@@ -20,9 +21,7 @@ export default {
     dogs: function() {
       return this.$store.state.dogs;
     }
-  },
-
-  mounted() {}
+  }
 };
 </script>
 

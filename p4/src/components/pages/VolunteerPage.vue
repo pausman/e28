@@ -1,6 +1,7 @@
 
 <template>
   <div>
+    <!-- Form to collect information if you want to volunteer  -->
     <h1>Volunteer!</h1>
     <form @submit.prevent='volunteerToHelp'>
       <label for='Name_text'>Name:</label>
@@ -16,7 +17,7 @@
       <div v-if='$v.name.$error'>
         <div
           class='form-error'
-          data-test='vol-name-err'
+          data-test='vol-name-err2'
           v-if='!$v.name.required'
         >Your name is required please.</div>
         <div
@@ -41,8 +42,16 @@
       <small>Required field</small>
 
       <div v-if='$v.email.$error'>
-        <div class='form-error' v-if='!$v.email.required'>Email address is required please.</div>
-        <div class='form-error' v-else-if='!$v.email.email'>Please enter a valid email address.</div>
+        <div
+          class='form-error'
+          data-test='vol-email-err'
+          v-if='!$v.email.required'
+        >Email address is required please.</div>
+        <div
+          class='form-error'
+          data-test='vol-email-err2'
+          v-else-if='!$v.email.email'
+        >Please enter a valid email address.</div>
       </div>
       <br />
       <label for='Name_text'>Phone:</label>
@@ -58,8 +67,16 @@
       <small>Numbers only please in the Format: 123-456-6789</small>
 
       <div v-if='$v.phone.$error'>
-        <div class='form-error' v-if='!$v.phone.required'>A phone number is required please.</div>
-        <div class='form-error' v-else-if='!$v.phone.isPhone'>Please enter a valid phone number.</div>
+        <div
+          class='form-error'
+          data-test='vol-phone-err'
+          v-if='!$v.phone.required'
+        >A phone number is required please.</div>
+        <div
+          class='form-error'
+          data-test='vol-phone-err2'
+          v-else-if='!$v.phone.isPhone'
+        >Please enter a valid phone number.</div>
       </div>
 
       <br />
@@ -110,13 +127,18 @@
       <div v-if='$v.monam.$error'>
         <div
           class='form-error'
+          data-test='vol-monam-err'
           v-if='!$v.monam.required'
         >Please select at least one day to volunteer.</div>
       </div>
       <br />
       <button data-test='add-vol-button' type='submit'>Volunteer</button>
 
-      <div class='form-error' v-if='formHasErrors'>Please correct the above errors</div>
+      <div
+        class='form-error'
+        data-test='vol-form-err'
+        v-if='formHasErrors'
+      >Please correct the above errors</div>
     </form>
   </div>
 </template>
@@ -128,7 +150,6 @@ import { required, minLength, email } from 'vuelidate/lib/validators';
 const isPhone = value => /^[0-9]{3}-[0-9]{3}-[0-9]{4}/.test(value); //phone valid
 export default {
   name: 'Volunteer',
-  components: {},
 
   data: function() {
     return {

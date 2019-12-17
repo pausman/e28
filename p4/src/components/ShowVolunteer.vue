@@ -1,5 +1,6 @@
 <template>
   <div v-if='currentVolunteer'>
+    <!-- Show the inputed volunteer informatio0n -->
     <h2>Thank you for volunteering</h2>
     <p>Here is the information you entered</p>
     <p data-test='vol-name'>Name: {{currentVolunteer}}</p>
@@ -19,12 +20,6 @@ export default {
   data: function() {
     return {};
   },
-  methods: {
-    //getVolInfo: function() {
-    // if there is a volunteer get it
-    // this.name = localStorage.getItem('name');
-    //}
-  },
   computed: {
     currentVolunteer: function() {
       return localStorage.getItem('name');
@@ -38,9 +33,7 @@ export default {
     days: function() {
       return localStorage.getItem('monam');
     }
-  },
-
-  mounted() {}
+  }
 };
 </script>
 
